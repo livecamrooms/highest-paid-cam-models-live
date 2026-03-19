@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>See What You're Missing on Chaturbate</title>
+    <meta name="description" content="Discover Chaturbate's highest paid cam models in 2026. Real-time earnings dashboard shows top performers making $1,800+/day. Live stats, trends &amp; peak hours. Ready to earn $10K+/month?">
+    <meta name="keywords" content="Chaturbate top earners, highest paid cam models 2026, webcam performer salaries, live cam earnings, Chaturbate income, top cam girls earnings, cam model dashboard">
+    <meta property="og:title" content="See What You're Missing on Chaturbate">
+    <meta property="og:description" content="Top cam models are earning $35M+ this month. See real-time earnings, live trends, and start your $10K+/month journey today.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://chaturbate.com">
+    <meta property="og:image" content="https://picsum.photos/id/1015/1200/630">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@500;600&amp;display=swap');
+        
+        :root {
+            --neon-purple: #c026d3;
+            --neon-green: #22c55e;
+        }
+        
+        .tail-container {
+            font-family: 'Inter', system_ui, sans-serif;
+        }
+        
+        .logo-font {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        .glass {
+            background: rgba(26, 26, 26, 0.85);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(192, 38, 211, 0.2);
+        }
+
+        .neon-glow {
+            box-shadow: 0 0 25px -5px rgb(192 38 211),
+                        0 0 10px -5px rgb(34 197 94);
+        }
+
+        .neon-text {
+            text-shadow: 0 0 15px rgb(192 38 211);
+        }
+
+        .card-hover {
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        
+        .card-hover:hover {
+            transform: scale(1.04) translateY(-8px);
+            box-shadow: 0 0 40px -10px rgb(192 38 211);
+        }
+
+        .live-badge {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+
+        .marquee {
+            animation: marquee 25s linear infinite;
+        }
+
+        @keyframes marquee {
+            from { transform: translateX(0); }
+            to { transform: translateX(-50%); }
+        }
+
+        .stat-number {
+            font-variant-numeric: tabular-nums;
+        }
+
+        .heatmap-cell {
+            transition: all 0.3s ease;
+        }
+        
+        .heatmap-cell:hover {
+            transform: scale(1.15);
+            filter: brightness(1.3);
+        }
+    </style>
+</head>
+<body class="tail-container bg-[#0a0a0a] text-white overflow-x-hidden">
+    <!-- NAVBAR -->
+    <nav class="fixed top-0 left-0 right-0 z-50 border-b border-white/10 bg-[#0a0a0a]/90 backdrop-blur-xl">
+        <div class="max-w-screen-2xl mx-auto px-8 py-5 flex items-center justify-between">
+            <div class="flex items-center gap-x-3">
+                <div class="w-9 h-9 bg-gradient-to-br from-[#c026d3] to-[#22c55e] rounded-2xl flex items-center justify-center text-2xl font-bold logo-font">C</div>
+                <div>
+                    <span class="text-3xl font-semibold tracking-tighter logo-font">CHATR</span>
+                    <span class="text-3xl font-semibold tracking-tighter text-[#22c55e]">EARN</span>
+                </div>
+            </div>
+            
+            <div class="hidden md:flex items-center gap-x-8 text-sm font-medium">
+                <a href="#" onclick="switchCategory(0);return false" class="hover:text-[#c026d3] transition-colors">ALL</a>
+                <a href="#" onclick="switchCategory(1);return false" class="hover:text-[#c026d3] transition-colors">GIRLS</a>
+                <a href="#" onclick="switchCategory(2);return false" class="hover:text-[#c026d3] transition-colors">BOYS</a>
+                <a href="#" onclick="switchCategory(3);return false" class="hover:text-[#c026d3] transition-colors">TRANS</a>
+                <a href="#" onclick="switchCategory(4);return false" class="hover:text-[#c026d3] transition-colors">COUPLES</a>
+            </div>
+
+            <div class="flex items-center gap-x-4">
+                <div class="px-6 py-2.5 bg-white/5 hover:bg-white/10 rounded-3xl text-xs font-medium tracking-widest border border-white/20 flex items-center gap-x-2 transition-all">
+                    <div class="w-2 h-2 bg-[#22c55e] rounded-full animate-pulse"></div>
+                    <span>7,984 ROOMS LIVE</span>
+                </div>
+                <button onclick="document.getElementById('broadcaster-cta').scrollIntoView({behavior:'smooth'})" 
+                        class="px-8 py-3.5 bg-gradient-to-r from-[#c026d3] to-[#22c55e] text-white font-semibold rounded-3xl text-sm hover:scale-105 transition-all neon-glow">
+                    START EARNING
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="h-20"></div>
+
+    <!-- HERO STATS -->
+    <div class="max-w-screen-2xl mx-auto px-8 pt-12 pb-16">
+        <div class="text-center mb-12">
+            <h1 class="text-7xl font-bold tracking-tighter logo-font neon-text mb-3">SEE WHAT YOU'RE MISSING</h1>
+            <p class="max-w-2xl mx-auto text-2xl text-white/70">Chaturbate's top performers made <span class="text-[#22c55e] font-semibold">$35,421,887</span> last month.<br>Ready to join them?</p>
+        </div>
+
+        <!-- STATS GRID -->
+        <div class="grid grid-cols-2 md:grid-cols-5 gap-6">
+            <!-- Stat 1 -->
+            <div class="glass rounded-3xl p-8 neon-glow text-center">
+                <div class="text-xs tracking-[2px] font-medium text-[#c026d3] mb-2">TOTAL INCOME TRACKED</div>
+                <div id="total-income" class="text-5xl font-bold text-white stat-number">35421887</div>
+                <div class="text-[#22c55e] text-sm mt-1">THIS MONTH • +18%</div>
+            </div>
+            
+            <!-- Stat 2 -->
+            <div class="glass rounded-3xl p-8 neon-glow text-center">
+                <div class="text-xs tracking-[2px] font-medium text-[#c026d3] mb-2">AVERAGE MONTHLY</div>
+                <div id="avg-earnings" class="text-5xl font-bold text-white stat-number">758</div>
+                <div class="text-white/70 text-sm mt-1">PER ACTIVE MODEL</div>
+            </div>
+            
+            <!-- Stat 3 -->
+            <div class="glass rounded-3xl p-8 neon-glow text-center">
+                <div class="text-xs tracking-[2px] font-medium text-[#c026d3] mb-2">MODELS EARNING $100+</div>
+                <div id="models-100" class="text-5xl font-bold text-white stat-number">46706</div>
+                <div class="text-white/70 text-sm mt-1">OF 114,955 TOTAL</div>
+            </div>
+            
+            <!-- Stat 4 -->
+            <div class="glass rounded-3xl p-8 neon-glow text-center">
+                <div class="text-xs tracking-[2px] font-medium text-[#c026d3] mb-2">AVG TIP SIZE</div>
+                <div id="avg-tip" class="text-5xl font-bold text-white stat-number">0.80</div>
+                <div class="text-white/70 text-sm mt-1">IN USD</div>
+            </div>
+            
+            <!-- Stat 5 -->
+            <div class="glass rounded-3xl p-8 neon-glow text-center">
+                <div class="text-xs tracking-[2px] font-medium text-[#c026d3] mb-2">1 TOKEN =</div>
+                <div class="text-5xl font-bold text-white stat-number">0.05</div>
+                <div class="text-[#22c55e] text-sm mt-1">USD • INSTANT CASH</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- BROADCASTER CTA BAR -->
+    <div id="broadcaster-cta" class="bg-gradient-to-r from-[#c026d3]/10 to-transparent border-y border-[#c026d3]/30 py-6">
+        <div class="max-w-screen-2xl mx-auto px-8 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div>
+                <div class="flex items-center gap-x-4">
+                    <span class="text-4xl">💰</span>
+                    <div>
+                        <div class="text-3xl font-semibold">Ready to earn <span class="text-[#22c55e]">$10,000+</span> every month?</div>
+                        <div class="text-white/70">Top models are cashing out daily. Your turn.</div>
+                    </div>
+                </div>
+            </div>
+            <a href="https://chaturbate.com/in/?tour=NwNd&amp;campaign=T2CSW&amp;track=statbate" 
+               target="_blank"
+               class="group px-12 py-6 bg-white text-[#0a0a0a] font-bold text-xl rounded-3xl flex items-center gap-x-4 hover:bg-[#22c55e] hover:text-white transition-all shadow-2xl">
+                START FREE TODAY →
+                <span class="text-3xl group-hover:rotate-12 transition-transform">🚀</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- INCOME TREND -->
+    <div class="max-w-screen-2xl mx-auto px-8 py-20">
+        <div class="flex items-end justify-between mb-8">
+            <div>
+                <div class="uppercase tracking-[3px] text-xs text-[#c026d3]">LIVE DATA</div>
+                <h2 class="text-5xl font-semibold tracking-tighter">Daily Income Trend</h2>
+            </div>
+            <div class="text-white/50 text-sm">Last 7 days • USD thousands</div>
+        </div>
+        <div class="glass rounded-3xl p-8">
+            <canvas id="trendChart" class="w-full h-80"></canvas>
+        </div>
+    </div>
+
+    <!-- LIVE TIPS TICKER -->
+    <div class="bg-[#111] py-5 border-y border-white/10 overflow-hidden">
+        <div class="flex items-center gap-x-6 text-sm font-medium whitespace-nowrap marquee" id="ticker-inner">
+            <!-- JS populated -->
+        </div>
+    </div>
+
+    <!-- CATEGORY TABS &amp; TOP EARNERS -->
+    <div class="max-w-screen-2xl mx-auto px-8 py-20">
+        <div class="flex justify-between items-center mb-10">
+            <h2 class="text-5xl font-semibold tracking-tighter">Top Earners Right Now</h2>
+            
+            <div class="flex bg-white/5 rounded-3xl p-1 text-sm" id="category-tabs">
+                <button onclick="switchCategory(0)" class="category-tab active px-8 py-3 rounded-3xl">ALL</button>
+                <button onclick="switchCategory(1)" class="category-tab px-8 py-3 rounded-3xl">GIRLS</button>
+                <button onclick="switchCategory(2)" class="category-tab px-8 py-3 rounded-3xl">BOYS</button>
+                <button onclick="switchCategory(3)" class="category-tab px-8 py-3 rounded-3xl">TRANS</button>
+                <button onclick="switchCategory(4)" class="category-tab px-8 py-3 rounded-3xl">COUPLES</button>
+            </div>
+        </div>
+
+        <!-- EARNERS GRID -->
+        <div id="earners-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+            <!-- Populated by JS -->
+        </div>
+
+        <div class="text-center mt-12">
+            <a href="https://chaturbate.com/in/?tour=NwNd&amp;campaign=T2CSW&amp;track=statbate" 
+               target="_blank"
+               class="inline-flex items-center gap-x-3 text-[#c026d3] hover:text-[#22c55e] transition-colors text-lg font-medium">
+                VIEW FULL TOP 100 LEADERBOARD →
+            </a>
+        </div>
+    </div>
+
+    <!-- PEAK HOURS HEATMAP -->
+    <div class="max-w-screen-2xl mx-auto px-8 py-20 bg-[#111]">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-10">
+                <div class="uppercase text-xs tracking-widest text-[#22c55e]">SMART DATA</div>
+                <h2 class="text-5xl font-semibold tracking-tighter">Peak Earning Hours</h2>
+                <p class="text-white/60 mt-3">Darker = more money flowing. Find your perfect show time.</p>
+            </div>
+            
+            <div class="glass rounded-3xl p-10">
+                <div class="grid grid-cols-8 gap-2 text-xs">
+                    <!-- Header -->
+                    <div class="col-start-2 col-span-7 grid grid-cols-7 text-center text-white/40 text-[10px]">
+                        <div>Mon</div><div>Tue</div><div>Wed</div><div>Thu</div><div>Fri</div><div>Sat</div><div>Sun</div>
+                    </div>
+                    
+                    <!-- Hours &amp; Cells -->
+                    <div class="flex flex-col justify-between text-[10px] text-white/40 py-1 pr-3 text-right">
+                        <div>3:00</div><div>6:00</div><div>9:00</div><div>12:00</div><div>15:00</div><div>18:00</div><div>21:00</div><div>24:00</div>
+                    </div>
+                    
+                    <div id="heatmap-grid" class="col-span-7 grid grid-cols-7 gap-2">
+                        <!-- JS populated colored cells -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FINAL CTA SECTION -->
+    <div class="max-w-screen-2xl mx-auto px-8 py-28 border-t border-white/10">
+        <div class="glass rounded-3xl p-16 text-center max-w-3xl mx-auto">
+            <div class="mx-auto w-20 h-20 bg-gradient-to-br from-[#c026d3] to-[#22c55e] rounded-2xl flex items-center justify-center mb-8 text-5xl">💸</div>
+            <h2 class="text-6xl font-bold tracking-tighter mb-6">Don't just watch.<br><span class="text-[#22c55e]">Earn like the pros.</span></h2>
+            <p class="text-xl text-white/70 max-w-md mx-auto mb-10">Over 46,000 models earned $100+ last month. Your profile could be next on this leaderboard.</p>
+            
+            <a href="https://chaturbate.com/in/?tour=NwNd&amp;campaign=T2CSW&amp;track=statbate" 
+               target="_blank"
+               class="inline-block px-16 py-7 text-2xl font-bold bg-white text-black rounded-3xl hover:bg-[#22c55e] hover:text-white transition-all shadow-2xl neon-glow">
+                BECOME A TOP EARNER — FREE
+            </a>
+            
+            <div class="mt-16 text-xs text-white/40 flex justify-center gap-x-8">
+                <div class="flex items-center gap-x-2">
+                    <span class="text-[#22c55e]">✓</span> Instant payouts
+                </div>
+                <div class="flex items-center gap-x-2">
+                    <span class="text-[#22c55e]">✓</span> Private shows pay 60%
+                </div>
+                <div class="flex items-center gap-x-2">
+                    <span class="text-[#22c55e]">✓</span> No experience needed
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- AFFILIATE CTA FOOTER BAR -->
+    <div class="bg-black py-8">
+        <div class="max-w-screen-2xl mx-auto px-8 flex flex-col md:flex-row items-center justify-between text-white/70 text-sm">
+            <div>© 2026 Live Cam Earnings • All earnings shown are public aggregate data</div>
+            
+            <a href="https://chaturbate.com/in/?tour=07kX&amp;campaign=T2CSW&amp;track=statbate" 
+               target="_blank"
+               class="mt-6 md:mt-0 group flex items-center gap-x-3 text-[#c026d3] hover:text-white transition-colors">
+                <span class="text-lg">Earn passive income promoting the hottest cam site</span>
+                <span class="px-6 py-3 bg-white/10 rounded-2xl group-hover:bg-[#c026d3] transition-colors">JOIN AFFILIATES →</span>
+            </a>
+        </div>
+    </div>
+
+    <script>
+        // Tailwind script already loaded via CDN - ready to use
+        
+        function initTailwind() {
+            // No extra config needed
+        }
+        
+        // Sample data for categories
+        let currentCategory = 0;
+        
+        const categoriesData = [
+            // ALL (mix)
+            [
+                {rank:1, username:"luna_vixen", avatar:"https://picsum.photos/id/1011/400/400", daily:1847, earned:45234, live:true, last:"online"},
+                {rank:2, username:"jaxon_storm", avatar:"https://picsum.photos/id/29/400/400", daily:1728, earned:38007, live:false, last:"7h ago"},
+                {rank:3, username:"sasha_rose69", avatar:"https://picsum.photos/id/64/400/400", daily:1592, earned:33481, live:true, last:"online"},
+                {rank:4, username:"kai_nyx", avatar:"https://picsum.photos/id/201/400/400", daily:1409, earned:29123, live:false, last:"2h ago"},
+                {rank:5, username:"emily_luxe", avatar:"https://picsum.photos/id/251/400/400", daily:1324, earned:27456, live:true, last:"online"}
+            ],
+            // GIRLS
+            [
+                {rank:1, username:"luna_vixen", avatar:"https://picsum.photos/id/1011/400/400", daily:1847, earned:45234, live:true, last:"online"},
+                {rank:2, username:"sasha_rose69", avatar:"https://picsum.photos/id/64/400/400", daily:1728, earned:38007, live:true, last:"online"},
+                {rank:3, username:"emily_luxe", avatar:"https://picsum.photos/id/251/400/400", daily:1592, earned:33481, live:false, last:"3h ago"},
+                {rank:4, username:"ava_sunset", avatar:"https://picsum.photos/id/160/400/400", daily:1489, earned:31245, live:true, last:"online"},
+                {rank:5, username:"mia_velvet", avatar:"https://picsum.photos/id/201/400/400", daily:1376, earned:28901, live:false, last:"11h ago"}
+            ],
+            // BOYS
+            [
+                {rank:1, username:"jaxon_storm", avatar:"https://picsum.photos/id/29/400/400", daily:1908, earned:41560, live:true, last:"online"},
+                {rank:2, username:"kai_nyx", avatar:"https://picsum.photos/id/201/400/400", daily:1704, earned:36200, live:false, last:"51m ago"},
+                {rank:3, username:"ryder_wolf", avatar:"https://picsum.photos/id/318/400/400", daily:1523, earned:32100, live:true, last:"online"},
+                {rank:4, username:"zayn_thunder", avatar:"https://picsum.photos/id/201/400/400", daily:1389, earned:28900, live:false, last:"4h ago"}
+            ],
+            // TRANS
+            [
+                {rank:1, username:"tiffany_sass", avatar:"https://picsum.photos/id/64/400/400", daily:1783, earned:38793, live:true, last:"online"},
+                {rank:2, username:"nova_blaze", avatar:"https://picsum.photos/id/251/400/400", daily:1640, earned:34713, live:false, last:"3h ago"},
+                {rank:3, username:"riley_fierce", avatar:"https://picsum.photos/id/160/400/400", daily:1498, earned:31245, live:true, last:"online"}
+            ],
+            // COUPLES
+            [
+                {rank:1, username:"loving_ladies", avatar:"https://picsum.photos/id/1015/400/400", daily:1176, earned:22344, live:true, last:"online"},
+                {rank:2, username:"petite_perles", avatar:"https://picsum.photos/id/29/400/400", daily:1023, earned:19876, live:false, last:"6h ago"},
+                {rank:3, username:"wild_duo69", avatar:"https://picsum.photos/id/318/400/400", daily:987, earned:18400, live:true, last:"online"}
+            ]
+        ];
+        
+        function renderEarners(categoryIndex) {
+            const grid = document.getElementById('earners-grid');
+            grid.innerHTML = '';
+            
+            const data = categoriesData[categoryIndex];
+            
+            data.forEach(model => {
+                const card = document.createElement('div');
+                card.className = `glass rounded-3xl p-6 card-hover relative overflow-hidden`;
+                
+                card.innerHTML = `
+                    <div class="absolute top-6 left-6 bg-black text-[#22c55e] text-xs font-mono px-3 py-1 rounded-2xl flex items-center gap-x-1.5 ${model.live ? 'live-badge' : ''}">
+                        ${model.live ? '● LIVE' : 'OFFLINE'}
+                    </div>
+                    
+                    <div class="flex justify-between items-start mb-6">
+                        <div class="flex items-center gap-x-4">
+                            <div class="w-7 h-7 bg-[#c026d3] text-white text-xs font-bold flex items-center justify-center rounded-2xl shadow-inner">${model.rank}</div>
+                            <img src="${model.avatar}" class="w-20 h-20 object-cover rounded-2xl ring-4 ring-white/10" alt="${model.username}">
+                        </div>
+                    </div>
+                    
+                    <div class="font-semibold text-3xl tracking-tight mb-1">${model.username}</div>
+                    <div class="text-white/50 text-sm mb-8">${model.last}</div>
+                    
+                    <div class="flex justify-between items-end">
+                        <div>
+                            <div class="text-xs text-[#c026d3]">$/DAY AVG</div>
+                            <div class="text-5xl font-bold text-[#22c55e] tracking-tighter">$${model.daily}</div>
+                        </div>
+                        <div class="text-right">
+                            <div class="text-xs text-white/60">THIS MONTH</div>
+                            <div class="text-3xl font-semibold">$${model.earned.toLocaleString()}</div>
+                        </div>
+                    </div>
+                    
+                    <a href="https://chaturbate.com" target="_blank" 
+                       class="mt-8 block w-full text-center py-4 bg-gradient-to-r from-[#c026d3] to-[#22c55e] rounded-2xl font-semibold text-sm hover:brightness-110 transition-all">
+                        WATCH LIVE NOW
+                    </a>
+                `;
+                grid.appendChild(card);
+            });
+        }
+        
+        function switchCategory(index) {
+            currentCategory = index;
+            // Update active tab
+            document.querySelectorAll('.category-tab').forEach((btn, i) => {
+                if (i === index) {
+                    btn.classList.add('active', 'bg-white', 'text-black');
+                } else {
+                    btn.classList.remove('active', 'bg-white', 'text-black');
+                }
+            });
+            renderEarners(index);
+        }
+        
+        // Animated counters
+        function animateCounter(id, target, duration = 1800, prefix = '', suffix = '') {
+            let start = 0;
+            const step = Math.ceil(target / (duration / 16));
+            const el = document.getElementById(id);
+            
+            const timer = setInterval(() => {
+                start += step;
+                if (start >= target) {
+                    start = target;
+                    clearInterval(timer);
+                }
+                el.textContent = prefix + start.toLocaleString() + suffix;
+            }, 16);
+        }
+        
+        // Live tips ticker
+        const tipsPool = [
+            "sweet_luna tipped 500tk ($25) in room",
+            "bigspender88 tipped 250tk ($12) in room",
+            "queen_sasha tipped 1200tk ($60) 🔥",
+            "mysteryguy tipped 800tk ($40) in room",
+            "couplefan tipped 300tk ($15) in room",
+            "diamonddonor tipped 1500tk ($75) 💎",
+        ];
+        
+        function startTicker() {
+            const container = document.getElementById('ticker-inner');
+            let html = '';
+            
+            for (let i = 0; i < 3; i++) {
+                tipsPool.forEach(tip => {
+                    html += `<span class="inline-flex items-center gap-x-8 px-8 text-[#22c55e]">${tip}</span>`;
+                });
+            }
+            
+            container.innerHTML = html + html; // double for seamless loop
+        }
+        
+        // Chart
+        let trendChartInstance;
+        
+        function createTrendChart() {
+            const ctx = document.getElementById('trendChart');
+            
+            if (trendChartInstance) trendChartInstance.destroy();
+            
+            trendChartInstance = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: ['Mar 13', 'Mar 14', 'Mar 15', 'Mar 16', 'Mar 17', 'Mar 18', 'Mar 19'],
+                    datasets: [{
+                        label: 'Total Daily Income',
+                        data: [1240000, 1380000, 1520000, 1710000, 1890000, 2140000, 2350000],
+                        borderColor: '#c026d3',
+                        backgroundColor: 'rgba(192, 38, 211, 0.15)',
+                        tension: 0.4,
+                        borderWidth: 5,
+                        pointRadius: 0,
+                        pointHoverRadius: 8
+                    }]
+                },
+                options: {
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: {
+                            backgroundColor: '#111',
+                            titleColor: '#fff',
+                            bodyColor: '#22c55e',
+                            displayColors: false
+                        }
+                    },
+                    scales: {
+                        y: {
+                            grid: { color: 'rgba(255,255,255,0.08)' },
+                            ticks: { color: '#666', callback: v => '$' + (v/1000) + 'k' }
+                        },
+                        x: {
+                            grid: { color: 'rgba(255,255,255,0.08)' },
+                            ticks: { color: '#666' }
+                        }
+                    },
+                    elements: {
+                        line: { borderJoinStyle: 'round' }
+                    }
+                }
+            });
+        }
+        
+        // Heatmap
+        function createHeatmap() {
+            const container = document.getElementById('heatmap-grid');
+            container.innerHTML = '';
+            
+            const values = [
+                [162,181,195,210,245,312,289],
+                [134,152,167,188,221,289,267],
+                [98, 115,142,170,198,245,221],
+                [210,234,289,312,367,421,398],
+                [178,201,245,267,301,356,332],
+                [145,167,198,221,256,301,278],
+                [89, 102,134,156,189,234,210],
+                [201,245,289,334,378,412,389]
+            ];
+            
+            for (let row = 0; row < 8; row++) {
+                for (let col = 0; col < 7; col++) {
+                    const intensity = Math.min(Math.floor(values[row][col] / 4), 100);
+                    const cell = document.createElement('div');
+                    cell.className = `heatmap-cell h-10 rounded-2xl flex items-center justify-center text-xs font-mono text-white/70`;
+                    cell.style.background = `linear-gradient(145deg, #22c55e ${intensity}%, #c026d3 ${intensity + 30}%)`;
+                    cell.textContent = values[row][col];
+                    container.appendChild(cell);
+                }
+            }
+        }
+        
+        // Main initialization
+        function initializePage() {
+            // Render initial earners
+            renderEarners(0);
+            
+            // Activate first tab
+            document.querySelectorAll('.category-tab')[0].classList.add('active', 'bg-white', 'text-black');
+            
+            // Animate counters
+            setTimeout(() => {
+                animateCounter('total-income', 35421887);
+                animateCounter('avg-earnings', 758);
+                animateCounter('models-100', 46706);
+                animateCounter('avg-tip', 80, 1200, '0.', '');
+            }, 800);
+            
+            // Start live ticker
+            startTicker();
+            
+            // Create chart
+            createTrendChart();
+            
+            // Create heatmap
+            createHeatmap();
+            
+            // Keyboard shortcut hint (fun)
+            console.log('%c👀 Press "L" for surprise live alert', 'color:#c026d3; font-size:10px');
+        }
+        
+        // Keyboard easter egg
+        document.addEventListener('keydown', function(e) {
+            if (e.key.toLowerCase() === 'l') {
+                const notif = document.createElement('div');
+                notif.style.cssText = 'position:fixed; bottom:30px; left:30px; background:#22c55e; color:black; padding:14px 28px; border-radius:9999px; font-weight:700; box-shadow:0 0 30px #22c55e; animation:pop 0.4s';
+                notif.innerHTML = '🔴 LUNA_VIXEN JUST WENT LIVE — $1,847 TODAY';
+                document.body.appendChild(notif);
+                
+                setTimeout(() => {
+                    notif.style.transition = 'all 0.6s';
+                    notif.style.opacity = '0';
+                    notif.style.transform = 'translateY(40px)';
+                    setTimeout(() => notif.remove(), 600);
+                }, 2800);
+            }
+        });
+        
+        // Boot the page
+        window.onload = function() {
+            initializePage();
+        };
+    </script>
+</body>
+</html>
